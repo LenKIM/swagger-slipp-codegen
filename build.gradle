@@ -1,15 +1,21 @@
 plugins {
     id 'java-library'
     id 'idea'
+    id "com.jfrog.bintray" version "1.8.4" // exact version!
+    id 'maven-publish'
+    id 'maven'
 }
 
 group 'org.slipp'
-version '0.0.1-SNAPSHOT'
+version '0.0.1'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url  "https://dl.bintray.com/lenkim/swagger-codegen"
+    }
 }
 
 dependencies {
@@ -18,4 +24,29 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok:1.18.12'
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
+}
+
+bintray {
+    user = 'lenkim'
+    key = '56c27b98ee26268beb3a73728249dc3d27b152fa'
+    publications = ['MyPublication']
+    pkg {
+        repo = 'swagger-codegen'
+        name = 'swagger-codegen'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/LenKIM/swagger-slipp-codegen.git'
+    }
+}
+//Failed to send a message: Package should include sources as part of the package.
+
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            from components.java
+            groupId 'org.slipp'
+            artifactId 'swagger-codegen'
+            version '0.0.2'
+        }
+    }
 }
