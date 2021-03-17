@@ -1,21 +1,19 @@
 plugins {
     id 'java-library'
-    id 'idea'
-    id "com.jfrog.bintray" version "1.8.4" // exact version!
     id 'maven-publish'
+    id "com.jfrog.bintray" version "1.8.4"
+    id "com.jfrog.artifactory" version "4.5.4"
+    id 'idea'
     id 'maven'
 }
 
-group 'org.slipp'
+group 'net.slipp'
 version '0.0.1'
 
 sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven {
-        url  "https://dl.bintray.com/lenkim/swagger-codegen"
-    }
 }
 
 dependencies {
@@ -26,27 +24,60 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.12'
 }
 
+artifactory {
+    contextUrl = 'http://oss.jfrog.org'
+    publish {
+        repository {
+            repoKey = 'oss-snapshot-local'
+            username = System.getenv('BINTRAY_USER')
+            password = System.getenv('BINTRAY_KEY')
+        }
+        defaults {
+            publications('mavenPublication')
+            publishArtifacts = true
+            publishPom = true
+        }
+    }
+    resolve {
+        repoKey = 'jcenter'
+    }
+    clientConfig.info.setBuildNumber(new Date().format('yyyyMMddHHmmss'))
+}
+
 bintray {
-    user = 'lenkim'
-    key = '56c27b98ee26268beb3a73728249dc3d27b152fa'
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
     publications = ['MyPublication']
     pkg {
-        repo = 'swagger-codegen'
-        name = 'swagger-codegen'
+        repo = 'libraries'
+        name = 'swagger-slipp-codegen'
+        userOrg = 'slipp-projects'
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/LenKIM/swagger-slipp-codegen.git'
+        version {
+            desc = "swagger-slipp-codegen"
+            released = new Date()
+        }
     }
 }
-//Failed to send a message: Package should include sources as part of the package.
 
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier.set('sources')
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    archiveClassifier.set('javadoc')
+}
 
 publishing {
     publications {
         MyPublication(MavenPublication) {
             from components.java
-            groupId 'org.slipp'
-            artifactId 'swagger-codegen'
-            version '0.0.2'
+            artifactId 'swagger-slipp-codegen'
+            groupId 'net.slipp'
+            version '0.0.1'
         }
     }
 }

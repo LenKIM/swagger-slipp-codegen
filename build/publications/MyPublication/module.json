@@ -1,17 +1,17 @@
 {
   "formatVersion": "1.1",
   "component": {
-    "group": "org.slipp",
-    "module": "swagger-codegen",
-    "version": "0.0.2",
+    "group": "net.slipp",
+    "module": "swagger-slipp-codegen",
+    "version": "0.0.1",
     "attributes": {
       "org.gradle.status": "release"
     }
   },
   "createdBy": {
     "gradle": {
-      "version": "6.3",
-      "buildId": "czfutdcpivgsdooydenzjezdwq"
+      "version": "6.5.1",
+      "buildId": "hafk45glyza4jfwfh5xrarcbci"
     }
   },
   "variants": [
@@ -26,13 +26,13 @@
       },
       "files": [
         {
-          "name": "swagger-codegen-0.0.2.jar",
-          "url": "swagger-codegen-0.0.2.jar",
+          "name": "swagger-slipp-codegen-0.0.1.jar",
+          "url": "swagger-slipp-codegen-0.0.1.jar",
           "size": 11130,
-          "sha512": "c41e57d244f2b747270f80fa3f4f78eb2571d49cfe06ce02ce271d2f39214bcd0babfe7294f017d39f5612a0f453f9d2d28f20e9458c0ae5f6e57ef623b678ce",
-          "sha256": "7fdb1a1eedcb015fe8eb5888b0941f2e6b16f4a6a3ad4639925e52bb87c1840e",
-          "sha1": "2ecdf5d8159189340850d7c7a00b8aeecf2c9f28",
-          "md5": "1137080a96b70b091ab3b06a32324c85"
+          "sha512": "ef6704bff56ee47435d8dc0d4a4f39b4ca1ef479f776ea8a205039f55f1709e35eb7c78c99a7e052db28edbd7ecc7a0897691906063f1fde78efb5376bc768f8",
+          "sha256": "441d841a3a26403452f148b1e31b1e07802e1dca8ea37e4e37982e045ee5fafe",
+          "sha1": "a8af5b57a8a5da50069b312e6726167e9d08f4e4",
+          "md5": "3ce17d9f5ab71583e3a25766d427f3ef"
         }
       ]
     },
@@ -56,13 +56,13 @@
       ],
       "files": [
         {
-          "name": "swagger-codegen-0.0.2.jar",
-          "url": "swagger-codegen-0.0.2.jar",
+          "name": "swagger-slipp-codegen-0.0.1.jar",
+          "url": "swagger-slipp-codegen-0.0.1.jar",
           "size": 11130,
-          "sha512": "c41e57d244f2b747270f80fa3f4f78eb2571d49cfe06ce02ce271d2f39214bcd0babfe7294f017d39f5612a0f453f9d2d28f20e9458c0ae5f6e57ef623b678ce",
-          "sha256": "7fdb1a1eedcb015fe8eb5888b0941f2e6b16f4a6a3ad4639925e52bb87c1840e",
-          "sha1": "2ecdf5d8159189340850d7c7a00b8aeecf2c9f28",
-          "md5": "1137080a96b70b091ab3b06a32324c85"
+          "sha512": "ef6704bff56ee47435d8dc0d4a4f39b4ca1ef479f776ea8a205039f55f1709e35eb7c78c99a7e052db28edbd7ecc7a0897691906063f1fde78efb5376bc768f8",
+          "sha256": "441d841a3a26403452f148b1e31b1e07802e1dca8ea37e4e37982e045ee5fafe",
+          "sha1": "a8af5b57a8a5da50069b312e6726167e9d08f4e4",
+          "md5": "3ce17d9f5ab71583e3a25766d427f3ef"
         }
       ]
     }

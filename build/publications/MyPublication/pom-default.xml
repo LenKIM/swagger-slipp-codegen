@@ -7,9 +7,9 @@
   <!-- that they should prefer consuming it instead. -->
   <!-- do_not_remove: published-with-gradle-metadata -->
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.slipp</groupId>
-  <artifactId>swagger-codegen</artifactId>
-  <version>0.0.2</version>
+  <groupId>net.slipp</groupId>
+  <artifactId>swagger-slipp-codegen</artifactId>
+  <version>0.0.1</version>
   <dependencies>
     <dependency>
       <groupId>io.swagger</groupId>
